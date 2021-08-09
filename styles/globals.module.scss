@@ -103,19 +103,24 @@ width: 100%;
 
 .createItem__form{
     background-color: white;
-    height: 90vh;
     display: flex;
     flex-direction: column;
     margin: 0 auto;
     justify-content: flex-start;
     align-items: center;
+    max-width: 450px;
+    margin-top: 10px;
+    box-shadow: 2px 2px 5px 1px rgba(0,0,0,0.4);
+    border-radius: 5px;
+    padding: 10px 4px;
     .createItem__textarea, .createItem__input{
-        padding: 8px;
+        padding: 13px 8px;
         border: 1px solid $grey;
         border-radius: 4px;
         min-width: 350px;
         max-width: 500px;
         margin: 15px 0;
+
     }
     .createItem__textarea {
         height: 150px;

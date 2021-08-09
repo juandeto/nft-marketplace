@@ -24,6 +24,7 @@ export default function CreateItem() {
     async function onChange(e) {
       const file = e.target.files[0]
       try {
+        console.log('client: ', client)
         const added = await client.add(
           file,
           {
@@ -36,6 +37,8 @@ export default function CreateItem() {
         console.log('Error uploading file: ', error)
       }  
     }
+
+
     async function createMarket() {
       const { name, description, price } = formInput
       if (!name || !description || !price || !fileUrl) return
@@ -43,8 +46,11 @@ export default function CreateItem() {
       const data = JSON.stringify({
         name, description, image: fileUrl
       })
+
+      console.log('client: ', client)
       try {
         const added = await client.add(data)
+        console.log('ADDED: ', added)
         const url = `https://ipfs.infura.io/ipfs/${added.path}`
         /* after file is uploaded to IPFS, pass the URL to save it on Polygon */
         createSale(url)
@@ -54,6 +60,7 @@ export default function CreateItem() {
     }
   
     async function createSale(url) {
+        console.log('url: ', url)
       const web3Modal = new Web3Modal()
       const connection = await web3Modal.connect()
       const provider = new ethers.providers.Web3Provider(connection)    
@@ -61,6 +68,7 @@ export default function CreateItem() {
       
       /* next, create the item */
       let contract = new ethers.Contract(nftaddress, NFT.abi, signer)
+      console.log('CONTRACT: ', contract)
       let transaction = await contract.createToken(url)
       let tx = await transaction.wait()
       let event = tx.events[0]
@@ -109,7 +117,7 @@ export default function CreateItem() {
             )
           }
           <button onClick={createMarket} className={styles.createItem__container}>
-            Create Digital Asset
+            Create NFT
           </button>
         </form>
       </div>
