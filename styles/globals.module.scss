@@ -1,0 +1,98 @@
+
+$color-text: #1E1E1E;
+$pink: #E9008C;
+$grey: #CACACA;
+
+.main__container{
+    min-height: 100vh;
+    width: 100%;
+    background-color: white;
+    box-sizing: border-box;
+    background-image: url('../assets/pink-back.png');
+    background-repeat: no-repeat;
+    background-position:0% 100%;
+    background-size: contain;
+}
+
+.nav__container{
+    box-shadow: 0px 1px 6px 0px rgba(0,0,0,0.4);
+    padding: 25px 10px;
+    h1{
+        color: $color-text;
+        font-size: 3rem;
+        padding: 8px;
+        letter-spacing: 0.12rem;
+        margin: 0px 0 20px 0;
+    }
+    .nav__linkContainer{
+
+        .nav__link {
+            text-decoration: none;
+            color: $pink;
+            font-size: 1.5rem;
+            padding: 8px;
+            margin-left: 20px;
+            position: relative;
+        }
+        .nav__link::after{
+            position: absolute;
+            content: "";
+            bottom: -10%;
+            left: 0;
+            width: 100%;
+            border: 1px solid $pink;
+            transition: 0.35 all;
+            transform: scaleX(0);
+            transition:transform 300ms ease-in  ;
+            transform-origin: top right;
+        }
+        .nav__link:hover::after{
+            transform: scaleX(1);
+            transform-origin: top left;
+        }
+
+        .nav__link:first-child{
+            margin-left: 0;
+        }
+    }
+    
+}
+
+.home__container{
+    padding: 10px;
+    .nfts_container{
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
+        .nft__card{
+            width: 275px;
+            border-radius: 5px;
+            border: 1px solid $grey;
+            img {
+                min-height: 170px;
+                object-fit: cover;
+                width: 260px;
+                margin: 0 auto;
+            }
+            .nft__info{
+                .nft__name{
+
+                }
+                .nft__description{
+                    p{
+
+                    }
+                }
+            }
+            .nft_buyOption{
+                p {
+
+                }
+                .nft__buyBtn {
+
+                }
+            }
+        }
+    }
+}
