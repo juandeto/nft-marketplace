@@ -2,7 +2,7 @@
 require("@nomiclabs/hardhat-waffle")
 const { createSecretKey } = require("crypto")
 const fs = require('fs')
-const secret = require('secret.json')
+const secret = require('./secret.json')
 
 
 module.exports = {
@@ -13,7 +13,7 @@ module.exports = {
     },
     ropsten: {
       url: secret.url,
-      accounts: secret.key
+      accounts: [secret.key]
     }
   },
   solidity: {

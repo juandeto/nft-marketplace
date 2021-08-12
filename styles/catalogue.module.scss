@@ -1,0 +1,113 @@
+@import './globals.module.scss';
+
+
+
+.nft__card{
+   display: flex;
+   flex-direction: column;
+   width: 275px;
+   height: 60vh;
+   border-radius: 5px;
+   border: 1px solid $grey;
+   padding: 8px;
+   cursor: pointer;
+    .nft__cardImage{
+       height: 80%;
+        margin-top: 20px;
+    }
+    .landing__question{
+        font-size: 3rem;
+        color: $deto-blue;
+        text-align: center;
+        padding: 100px 10px;
+    }
+    img {
+        object-fit: cover;
+        height: 100%;
+        width: 100%;
+        margin: 0 auto;
+        display: block;
+    }
+    .nft_buyOption{
+        display: flex;
+        justify-content: space-between;
+        .nft__name, .price{
+            padding: 5px;
+        }
+        label{
+            color: $secondary-text;
+            margin-bottom: 0;
+        }
+
+        p {
+            margin: 5px 0;
+            font-weight: bold;
+            text-align: end;
+            svg{
+                font-size: 1.1rem;
+                margin-right: 5px;
+            }
+        }
+    }
+}
+
+.nft__card:hover{
+    box-shadow:$box_shadow1;
+    transition: $transition-box;
+}
+
+.detail_container{
+    .detail_main{
+        padding: 15px;
+        display: flex;
+        justify-content: space-around;
+        .detail_column1{
+            object-fit: cover;
+            max-width: 60%;
+            img:hover{
+                box-shadow: $box_shadow1;
+                transition: $transition-box;
+            }
+        }
+        .detail_column2{
+            min-width: 30%;
+            padding:0px;
+            h2{
+                font-size: 3rem;
+                margin: 10px auto
+            }
+            .detail_info{
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                border: 1px solid $grey;
+                border-radius: 4px;
+                padding: 10px 20px;
+                height: 84%;
+                .detail_info_desc,
+                .detail_info_price{
+                    display: flex;
+                    flex-direction: column;
+                    // border-top: 1px solid $grey;
+                    span{
+                        color: $secondary-text;
+                        font-size: 1.5rem;
+                        font-weight: bold;
+                    }
+                    p{
+                        font-size: 1.3rem;
+                    }
+                }
+                .detail_buyBtn{
+                    button{
+                       @include btn(); 
+                       width: 100%;
+                       justify-self: end;
+                       
+                    }
+                    
+                }
+            }
+        }
+    }
+}

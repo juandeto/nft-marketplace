@@ -1,95 +1,46 @@
-import {ethers} from 'ethers';
-import {useEffect, useState} from 'react';
-import axios from 'axios';
-import Web3Modal from 'web3modal';
+import Image from 'next/image';
 import styles from '../styles/globals.module.scss';
+import detoLogo from '../assets/deto-logo.jpg';
+import yellowPantera1 from '../assets/yellowPantera1.png';
+import Link from 'next/link'
 
-import {
-  nftaddress, nftmarketaddress
-} from '../config';
 
-import NFT from '../artifacts/contracts/NFT.sol/NFT.json'
-import Market from '../artifacts/contracts/NFTMarket.sol/NFTMarket.json'
-
-export default function Home() {
-  const [nfts, setNfts] = useState([])
-  const [loading, setLoading] = useState(false)
-
-  useEffect(() => {
-    loadNfts()
-  }, [])
-
-  async function loadNfts() {
-    setLoading(true)
-    const provider = new ethers.providers.JsonRpcProvider('https://ropsten.infura.io/v3/d6b40571d3fb4b5c81ec4e57b58c39d5') //provider génerico
-    const tokenContract = new ethers.Contract(nftaddress, NFT.abi, provider)
-    const marketContract = new ethers.Contract(nftmarketaddress, Market.abi, provider)
-    const data = await marketContract.fetchMarketItems()
-
-    const items = await Promise.all(data.map(async i => {
-      const tokenUri = await tokenContract.tokenURI(i.tokenId)
-      const meta = await axios.get(tokenUri) //https://ifps... sacas la metadata del token: imagen, etc
-      let price = ethers.utils.formatUnits(i.price.toString(), 'ether')
-
-      let item = {
-        price: price,
-        tokenId: i.price.toString(),
-        seller: i.seller,
-        owner: i.owner,
-        image: meta.data.image,
-        name: meta.data.name,
-        description: meta.data.description
-      }
-
-      return item
-    }))
-
-    setNfts(items)
-    setLoading(false)
-  }
-
-  async function buyNft(nft) {
-    const web3Modal = new Web3Modal()
-    const connection = await web3Modal.connect()
-    const provider = new ethers.providers.Web3Provider(connection)
-    const signer = provider.getSigner()
-    const contract = new ethers.Contract(nftmarketaddress, Market.abi, signer)
-
-    const price = ethers.utils.parseUnits(nft.price.toString(), 'ether')
-    const transaction = await contract.createMarketSale(nftaddress, nft.tokenId, {
-      value: price
-    })
-    await transaction.wait()
-    loadNFTs()
-  }
-
-if(loading || !nfts.length) return (
-    <h2 className={styles.empty__state}>No hay items en el mercado</h2>
-  )
+export default function Landing() {
 
   return (
-    <div className={styles.home__container}>
-      <div className={styles.nfts_container}>
-        {
-          nfts.map((nft, i) => (
-            <div key={i} className={styles.nft__card}>
-              <img src={nft.image} alt="image__nft"/>
-              <div className={styles.nft__info}>
-                <p className={styles.nft__name}>{nft.name}</p>
-                <div className={styles.nft__description}>
-                  <p>{nft.description}</p>
-                </div>
-              </div>
-              <div className={styles.nft_buyOption}>
-                <p>{nft.price}</p>
-                <button 
-                onClick={() => buyNft(nft)}
-                className={styles.nft__buyBtn}>Comprar</button>  
-              </div>
-            </div>
-          ))
-        }
-      </div>
-    </div>
+    <>
+    <main className={styles.landing}>
+          <div className={styles.landing_img}>
+            <Image
+            src={yellowPantera1} />
+          </div>
+         <div className={styles.title_container}>
+          <Image
+           src={detoLogo}
+            alt="logo"
+            alt="Picture of the author"
+          /> 
+          <div className={styles.landing_info}>
+            <h4>NFT Market about de Tomaso brand</h4>
+            <Link href="/create-item">
+            
+              <button>Start</button>
+            </Link>
+          </div>
+          </div>
+      </main>
+      <section className={styles.landing_msg}>
+        <h2>We are</h2>
+        <p>a community that shares love for de Tomaso brand,</p>
+        <p>so we want to discover and show unique material.</p>
+        <h3>¡Welcome!</h3>
+      </section>
+      <section className={styles.landing_collection}>
+        <h2>Explore <span>NFT's</span> gallery</h2>
+        <div className={styles.landing_collectionImg}>
+        
+        </div>
+      </section>
+      </>
   )
 }

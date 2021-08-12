@@ -39,54 +39,39 @@ export default function CreateItem() {
     }
 
 
-    async function createMarket() {
+    const createMarket = async (event) => {
+      event.preventDefault()
+      debugger
       const { name, description, price } = formInput
-      if (!name || !description || !price || !fileUrl) return
+      if (!name || !description || !price || !fileUrl){
+        alert('Complete todos los campos antes de crear el NFT');
+        return
+      }
       /* first, upload to IPFS */
       const data = JSON.stringify({
         name, description, image: fileUrl
       })
+    
 
-      createSale(fileUrl)
-      // console.log('client: ', client)
-      // try {
-      //   const added = await axios({
-      //     url: client, 
-      //     method: 'POST',
-      //     headers: {
-      //       'Authorization': 'Basic 1wTDpgEzBXtbuSSdtCZCZtGtQ8l',
-      //     },
-      //     mode: 'no-cors',
-      //     body: data
-      //   }).then(res => console.log(res))
-      //   .catch(e =>{
-      //     console.log(e)
-      //     debugger
-      //   })
-      //   console.log('ADDED: ', added)
-      //   debugger
-      //   const url = `https://ipfs.infura.io/ipfs/${added.path}`
-      //   /* after file is uploaded to IPFS, pass the URL to save it on Polygon */
-      //   createSale(url)
-      // } catch (error) {
-      //   console.log('Error uploading file: ', error)
-      // }  
+      try {
+        const added = await client.add(data)
+        const url = `https://ipfs.infura.io/ipfs/${added.path}`
+        /* after file is uploaded to IPFS, pass the URL to save it on Polygon */
+        createSale(url)
+      } catch (error) {
+        console.log('Error uploading file: ', error)
+      }  
     }
   
     async function createSale(url) {
-        console.log('url: ', url)
-      debugger
+      
       const web3Modal = new Web3Modal()
-      console.log('web3Modal: ', web3Modal)
-     
+      console.log('web3Modal: ', web3Modal) 
       const connection = await web3Modal.connect()
       const provider = new ethers.providers.Web3Provider(connection)   
-      console.log('Provider: ', provider) 
       const signer = provider.getSigner()
-      
       /* next, create the item */
       let contract = new ethers.Contract(nftaddress, NFT.abi, signer)
-      console.log('CONTRACT: ', contract)
       let transaction = await contract.createToken(url)
       let tx = await transaction.wait()
       let event = tx.events[0]
@@ -107,7 +92,7 @@ export default function CreateItem() {
   
     return (
       <div className={styles.createItem__container}>
-        <form className={styles.createItem__form}>
+        <form className={styles.createItem__form} onSubmit={(event) => createMarket(event)}>
           <input 
             placeholder="Nombre del activo"
             className={styles.createItem__input}
@@ -134,7 +119,7 @@ export default function CreateItem() {
               <img className={styles.createItem__container} width="350" src={fileUrl} />
             )
           }
-          <button onClick={createMarket} className={styles.createItem__container}>
+          <button type="submit" className={styles.createItem__container}>
             Create NFT
           </button>
         </form>
