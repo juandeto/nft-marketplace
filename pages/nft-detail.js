@@ -4,8 +4,9 @@ import {FaEthereum} from 'react-icons/fa'
 
 export default function NFTDetail() {
     const router = useRouter()
-    console.log('Router:', router)
     const nft = JSON.parse(router.query.nft);
+
+    
     return(
         <div className={catalogue.detail_container}>
             <article className={catalogue.detail_main  }>

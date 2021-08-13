@@ -39,7 +39,6 @@ $transition-box: all 0.1s ease 0s;
 .main__container{
     height: 100vh;
     width: 100%;
-    background-color: white;
     box-sizing: border-box;
 }
 
@@ -47,6 +46,8 @@ $transition-box: all 0.1s ease 0s;
     display: flex;
     flex-direction: column-reverse;
     justify-content: flex-end;
+    min-height: 95vh;
+    margin-bottom: 200px;
 }
 
 .landing_info{
@@ -105,18 +106,19 @@ $transition-box: all 0.1s ease 0s;
 }
 
 .landing_msg{
-    margin-top: 250px;
-    background-color: $deto-blue;
-    border-bottom-left-radius: 50% 40%;
-    border-bottom-right-radius: 50% 40%;
-    border-top-left-radius: 5% 1%;
-    border-top-right-radius: 5% 1%;
+    height: 100vh;
+    background: url('../assets/Rectangle1.svg');
+    background-size: 150%;
+    background-repeat: no-repeat;
+    background-position-y: -0%;
+    background-position-x: 50%;
     padding: 70px 40px 80px 40px;
     h2{
         font-size: 3.5rem;
         color: white;
         font-weight: bold;
         margin-bottom: 0;
+        margin-top: 200px;
     }
     p{
         color: white;
@@ -135,11 +137,13 @@ $transition-box: all 0.1s ease 0s;
 .landing_collection{
     height: 70vh;
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
+    padding: 0 50px;
     h2{
         font-size: 4rem;
         color: $deto-blue;
+        text-align: center;
         span{
             color: $pink;
         }
@@ -153,6 +157,8 @@ $transition-box: all 0.1s ease 0s;
         display: flex;
         justify-content: space-between;
         align-content: center;
+        border-bottom: 1px solid $grey;
+        box-shadow: $box_shadow1;
         .nav__column1{
             button{
                 @include btnWhite();

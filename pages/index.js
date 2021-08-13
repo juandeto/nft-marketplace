@@ -2,6 +2,7 @@ import Image from 'next/image';
 import styles from '../styles/globals.module.scss';
 import detoLogo from '../assets/deto-logo.jpg';
 import yellowPantera1 from '../assets/yellowPantera1.png';
+import pantera2 from '../assets/pantera2.png'
 import Link from 'next/link'
 
 
@@ -38,7 +39,7 @@ export default function Landing() {
       <section className={styles.landing_collection}>
         <h2>Explore <span>NFT's</span> gallery</h2>
         <div className={styles.landing_collectionImg}>
-        
+          <Image src={pantera2} alt="pantera_landing" />
         </div>
       </section>
       </>
