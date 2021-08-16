@@ -9,7 +9,7 @@ import {ImCross} from 'react-icons/im'
 
 function MyApp({ Component, pageProps }) {
   const [displayMenu, setDisplayMenu] = useState(false)
-console.log('DISPLAY MENU: ', displayMenu)
+  
   return (
     <>
     <Head>
