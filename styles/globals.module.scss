@@ -54,7 +54,7 @@ $transition-box: all 0.1s ease 0s;
     display: flex;
     flex-direction: column;
     align-items: center;
-    h4{
+    h1{
         font-size: 3rem;
         letter-spacing: 0.05rem;
         width: 450px;
@@ -88,16 +88,7 @@ $transition-box: all 0.1s ease 0s;
     flex-direction: row-reverse;
     padding: 0 100px;
     margin-top: 62px;
-    h1{
-            color: $silver;
-            font-size: 4rem;
-            padding: 8px;
-            letter-spacing: 0.12rem;
-            margin: 0px 0 20px 30px;
-            background: -webkit-linear-gradient(#eee, #333);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
+   
     img{
         width: 360px;
         margin-right: 10px;
@@ -106,19 +97,19 @@ $transition-box: all 0.1s ease 0s;
 }
 
 .landing_msg{
-    height: 100vh;
-    background: url('../assets/Rectangle1.svg');
-    background-size: 150%;
+  height: 110vh;
+  background: url('../assets/Rectangle1.svg');
+    background-size: 138%;
     background-repeat: no-repeat;
-    background-position-y: -0%;
+    background-position-y: 0%;
     background-position-x: 50%;
-    padding: 70px 40px 80px 40px;
+    padding: 100px 40px 0px 40px;
     h2{
         font-size: 3.5rem;
         color: white;
         font-weight: bold;
         margin-bottom: 0;
-        margin-top: 200px;
+        margin-top: 100px;
     }
     p{
         color: white;
@@ -150,9 +141,19 @@ $transition-box: all 0.1s ease 0s;
     }
 }
 
-
+.nav_menuResponsive{
+    display: none;
+    font-size: 2rem;
+    width: 100%;
+  
+    svg{
+        margin-bottom: 5px;
+        padding: 5px;
+        margin-left: auto;
+    }
+}
 .nav__linkContainer{
-        width: calc(100% - 25px);
+        width: calc(100% - 50px);
         padding: 25px;
         display: flex;
         justify-content: space-between;
@@ -260,7 +261,7 @@ width: 100%;
 
     }
     .nfts_container{
-        width: 100%;
+        width: calc(100% - 40px);
         display: flex;
         flex-wrap: wrap;
         gap: 15px;
@@ -357,3 +358,363 @@ width: 100%;
     }
   }
   
+
+.footer_container{
+    height: 20vh;
+    width: 100%;
+    background-color: $deto-blue;
+    margin-top: 15px;
+    padding: 8px;
+    .media_links{
+        color: white;
+        display: flex;
+        justify-content: center;
+        a{
+            color: white;
+            border-radius: 50%;
+            border: 1px solid white;
+            padding: 5px;
+            margin: 20px;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            justify-content: center;
+            svg{
+                margin-top: 3px;
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width:380px){
+  .main__container{
+    box-sizing: border-box;
+}
+
+  .landing{
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: flex-end;
+    min-height: 95vh;
+    margin-bottom: 100px;
+    width: 100%;
+}
+
+.title_container{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+    padding: 0 20px;
+    margin-top: 20px;
+    .title_image{
+        max-width: 150px;
+    }
+}
+
+.landing_info{
+    padding: 0 20px;
+    h1{
+        font-size: 2rem;
+        letter-spacing: 0.05rem;
+        text-align: center;
+        padding: 0 100px;
+        max-width: 300px;
+    }
+    button{
+        @include btn();
+        width: 120px;
+        font-size: 1rem;
+        letter-spacing: 0.04rem;
+        text-transform: uppercase;
+        transition: 0.4s all ease;
+    }
+    button:hover{
+        background-color: $hover_blue;
+        box-shadow: $shadow1;
+    }
+}
+
+.landing_img{
+    position: absolute;
+    bottom: 0;
+  width: 100%;
+}
+
+.landing_msg{
+    height: 100vh;
+    background: url('../assets/Rectangle1.svg');
+    background-size: 425%;
+    background-repeat: no-repeat;
+    background-position-y: -0%;
+    background-position-x: 50%;
+    padding: 10px 40px 80px 40px;
+    h2{
+        font-size: 2.5rem;
+        color: white;
+        font-weight: bold;
+        margin-bottom: 0;
+        margin-top: 50px;
+    }
+    p{
+        color: white;
+        font-size: 1.5rem;
+        text-align: center;
+    }
+    h3{
+        color: white;
+        font-size: 2.9rem;
+        font-weight: bold;
+        text-align: center;
+        margin-bottom: 0;
+
+    }
+}
+
+.landing_collection{
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 50px;
+    h2{
+        font-size: 2.5rem;
+        color: $deto-blue;
+        text-align: center;
+        span{
+            color: $pink;
+        }
+    }
+    div{
+      width: 70vh;
+    }
+}
+ .nav_menuResponsive{
+            display: flex;
+            font-size: 2rem;
+            width: 100%;
+            justify-content: flex-end;
+            svg{
+                margin-bottom: 5px;
+                padding: 10px;
+                margin-left: auto;
+            }
+        }
+
+.nav__linkContainer{
+        position: absolute;
+        top: 10%;
+        left: 0;
+        width: calc(100% - 20px);
+        z-index: 100;
+        height: 100vh;
+        padding: 10px;
+        flex-direction: column;
+        flex-wrap: wrap;
+        visibility: hidden;
+        opacity: 0;
+        justify-content: flex-start;
+        border-bottom: none;
+        box-shadow: none;
+        background-color: white;
+        transition: 0.4s opacity ease;
+        .nav__column1{
+            button{
+                @include btnWhite();
+                transition: 0.4s all ease;
+                padding:10px 8px;
+                font-size: 1rem;
+                width: calc(90% - 20px);
+                margin: 10px auto;
+                display: block;
+            }
+            button:hover{
+                box-shadow: $shadow1;
+            }
+        }
+        .nav__column2{
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            width: 100%;
+            align-items: center;
+            margin-right: 0px;
+        }
+       
+        .nav__link {
+            height: 10vh;
+            width: 100%;
+            z-index: 100;
+            display: block;
+            border-bottom: 1px solid $grey;
+            text-decoration: none;
+            color: $deto-blue;
+            font-size: 2rem;
+            text-align: center;
+            padding: 12px 0;
+            margin-left: 0px;
+            position: relative;
+        }
+        .nav__link::after{
+            position: absolute;
+            content: "";
+            bottom: -5%;
+            left: 0;
+            width: 100%;
+            border: none;
+            transition: 0.35 all;
+            transform: none;
+            transition:transform 300ms ease-in  ;
+            transform-origin: top right;
+        }
+        .nav__link:hover::after{
+            transform: none;
+            transform-origin: top left;
+        }
+
+        .nav__link:first-child{
+            margin-left: 0;
+        }
+    }    
+
+ .opened{
+            visibility: visible;
+            opacity: 1;
+        }
+
+.createItem__container{
+width: 100%;
+}
+
+.createItem__form{
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    justify-content: flex-start;
+    align-items: center;
+    max-width: 450px;
+    margin-top: 20px;
+    box-shadow: 2px 2px 5px 1px rgba(0,0,0,0.4);
+    border-radius: 5px;
+    padding: 10px 4px;
+    width: 90%;
+    .createItem__textarea, .createItem__input{
+        padding: 13px 8px;
+        border: 1px solid $grey;
+        border-radius: 4px;
+        min-width: 100px;
+        max-width: 500px;
+        width: calc(100% - 26px);
+        margin: 10px 0;
+
+    }
+    .createItem__textarea {
+        height: 150px;
+
+    }
+    .createItem__container{
+        color: white;
+        font-weight: bold;
+        font-size: 1.1rem;
+        box-shadow: 1px 2px 3px rgba(0,0,0,0.3);
+        width: none;
+        margin: 15px auto;
+        border: none;
+        border-radius: 4px;
+        padding: 20px 10px;
+        width: calc(100% - 20px);
+        background-color: $deto-blue;
+        cursor: pointer;
+    }
+}
+
+
+.home__container{
+    padding: 10px;
+    header{
+        h2{
+            color: $deto-blue;
+            font-size: 2.5rem;
+            margin-left: 4%;
+            border-bottom: 1px solid $grey;
+        }
+
+    }
+}
+
+.spinner_container{
+    min-height: 70vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.spinner {
+    color: $deto-blue;
+    font-size: 90px;
+    text-indent: -9999em;
+    overflow: hidden;
+    width: 1em;
+    height: 1em;
+    border-radius: 50%;
+    margin: 72px auto;
+    position: relative;
+    -webkit-transform: translateZ(0);
+    -ms-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-animation: load6 1.7s infinite ease, round 1.7s infinite ease;
+    animation: load6 1.7s infinite ease, round 1.7s infinite ease;
+  }
+
+}
+
+@media (max-width:310px){
+
+    .landing_msg{
+        height: 100vh;
+        background: url('../assets/Rectangle1.svg');
+        background-size: 425%;
+        background-repeat: no-repeat;
+        background-position-y: -0%;
+        background-position-x: 50%;
+        padding: 10px 40px 80px 40px;
+        h2{
+            font-size: 2rem;
+            color: white;
+            font-weight: bold;
+            margin-bottom: 0;
+            margin-top: 50px;
+        }
+        p{
+            color: white;
+            font-size: 1.3rem;
+            text-align: center;
+        }
+        h3{
+            color: white;
+            font-size: 2.5rem;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 0;
+    
+        }
+    }
+}

@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import Image from 'next/image';
 import styles from '../styles/globals.module.scss';
 import detoLogo from '../assets/deto-logo.jpg';
@@ -16,15 +17,16 @@ export default function Landing() {
             src={yellowPantera1} />
           </div>
          <div className={styles.title_container}>
-          <Image
-           src={detoLogo}
-            alt="logo"
-            alt="Picture of the author"
-          /> 
+           <div className={styles.title_image}>
+             <Image
+              src={detoLogo}
+                alt="logo"
+              /> 
+           </div>
+          
           <div className={styles.landing_info}>
-            <h4>NFT Market about de Tomaso brand</h4>
+            <h1>NFT Market about de Tomaso brand</h1>
             <Link href="/create-item">
-            
               <button>Start</button>
             </Link>
           </div>

@@ -1,0 +1,36 @@
+@import './globals.module.scss';
+
+.container{
+
+}
+
+.gallery_container{
+    padding: 0 10px;
+    header{
+        h2{
+            color: $deto-blue;
+            font-size: 3rem;
+            margin-left: 4%;
+            border-bottom: 1px solid $grey;
+        }
+    }
+    .gallery{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 380px){
+    .gallery_container{
+    header{
+        h2{
+            color: $deto-blue;
+            font-size: 2rem;
+            margin-left: 4%;
+            border-bottom: 1px solid $grey;
+        }
+    }
+    }
+
+}

@@ -111,3 +111,56 @@
         }
     }
 }
+
+
+@media (max-width:320px){
+    
+.nft__card{
+    display: flex;
+    flex-direction: column;
+    width: calc(100% - 16px);
+    height: 60vh;
+    border-radius: 5px;
+    border: 1px solid $grey;
+    padding: 8px;
+    cursor: pointer;
+     .nft__cardImage{
+        height: 80%;
+         margin-top: 20px;
+     }
+     .landing__question{
+         font-size: 3rem;
+         color: $deto-blue;
+         text-align: center;
+         padding: 100px 10px;
+     }
+     img {
+         object-fit: cover;
+         height: 100%;
+         width: 100%;
+         margin: 0 auto;
+         display: block;
+     }
+     .nft_buyOption{
+         display: flex;
+         justify-content: space-between;
+         .nft__name, .price{
+             padding: 5px;
+         }
+         label{
+             color: $secondary-text;
+             margin-bottom: 0;
+         }
+ 
+         p {
+             margin: 5px 0;
+             font-weight: bold;
+             text-align: end;
+             svg{
+                 font-size: 1.1rem;
+                 margin-right: 5px;
+             }
+         }
+     }
+ }
+  }
