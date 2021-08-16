@@ -15,7 +15,7 @@
     "axios": "^0.21.1",
     "chai": "^4.3.4",
     "ethereum-waffle": "^3.4.0",
-    "ethereumjs-abi": "^0.6.7",
+    "ethereumjs-abi": "^0.6.8",
     "ethers": "^5.4.4",
     "hardhat": "^2.6.0",
     "ipfs-http-client": "^51.0.1",
