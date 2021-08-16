@@ -1,6 +1,7 @@
 import { useRouter } from "next/router"
 import catalogue from '../styles/catalogue.module.scss'
 import {FaEthereum} from 'react-icons/fa'
+import Image from 'next/image'
 
 export default function NFTDetail() {
     const router = useRouter()
@@ -11,7 +12,7 @@ export default function NFTDetail() {
         <div className={catalogue.detail_container}>
             <article className={catalogue.detail_main  }>
                 <span className={catalogue.detail_column1}>
-                    <img src={nft?.image} alt="pic_nft?" />
+                    <Image src={nft?.image} alt="nft picture" />
                 </span>
                 <span className={catalogue.detail_column2}>
                     <h2>{nft?.name}</h2>

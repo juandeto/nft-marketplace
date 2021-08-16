@@ -5,6 +5,7 @@ import { useRouter } from 'next/router'
 import Web3Modal from 'web3modal'
 import styles from '../styles/globals.module.scss';
 import axios from 'axios';
+import Image from 'next/image'
 
 const client = ipfsHttpClient('https://ipfs.infura.io:5001/api/v0')
 
@@ -116,7 +117,7 @@ export default function CreateItem() {
           />
           {
             fileUrl && (
-              <img className={styles.createItem__container} width="350" src={fileUrl} />
+              <Image alt="preview of the uploaded file" className={styles.createItem__container} width="350" src={fileUrl} />
             )
           }
           <button type="submit" className={styles.createItem__container}>

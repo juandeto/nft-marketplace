@@ -1,6 +1,6 @@
 import catalogue from '../../styles/catalogue.module.scss'
 import {FaEthereum} from 'react-icons/fa'
-import Link from "next/link"
+import Image from "next/image"
 import Router from 'next/router'
 export default function NFTCard({nft}) {
   
@@ -16,7 +16,7 @@ const handleDetailRoute = () => {
         onClick={handleDetailRoute}
         className={catalogue.nft__card}>
               <div className={catalogue.nft__cardImage}>
-                <img src={nft.image} alt="image__nft"/>
+                <Image src={nft.image} alt="image__nft" layout='fill'/>
               </div>
               
               {/* <div className={catalogue.nft__info}>

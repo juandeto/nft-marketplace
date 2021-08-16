@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "next build && next export",
     "start": "next start",
     "lint": "next lint"
   },
@@ -15,6 +15,7 @@
     "axios": "^0.21.1",
     "chai": "^4.3.4",
     "ethereum-waffle": "^3.4.0",
+    "ethereumjs-abi": "^0.6.8",
     "ethers": "^5.4.4",
     "hardhat": "^2.6.0",
     "ipfs-http-client": "^51.0.1",
