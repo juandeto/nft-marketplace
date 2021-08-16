@@ -1,6 +1,5 @@
 /* hardhat.config.js */
 require("@nomiclabs/hardhat-waffle")
-const { createSecretKey } = require("crypto")
 const fs = require('fs')
 const secret = require('./secret.json')
 
