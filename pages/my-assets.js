@@ -51,13 +51,13 @@ const [nfts, setNfts] = useState([])
   }
   if (loadingState) return <Spinner />
   return (
-    <div className={assets.container}>
-      <div className={assets.gallery_container}>
+    <div className={assets?.container}>
+      <div className={assets?.gallery_container}>
         <header>
             <h2>Gallery</h2>
         </header>
-        <div className={assets.gallery}>
-          {!nfts.length ? <h3 className={assets.empty_state}>No assets owned</h3>:
+        <div className={assets?.gallery}>
+          {!nfts.length ? <h3 className={assets?.empty_state}>No assets owned</h3>:
              nfts.map((nft, i) => <NFTCard key={i} nft={nft}/>)
           }
         </div>

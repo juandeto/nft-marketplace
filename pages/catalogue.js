@@ -67,11 +67,11 @@ export default function Home() {
 
 
   return (
-    <div className={styles.home__container}>
+    <div className={styles?.home__container}>
       <header>
         <h2>Gallery</h2>
       </header>
-      <div className={styles.nfts_container}>
+      <div className={styles?.nfts_container}>
         {loading ? <Spinner /> :
          nfts.map((nft, i) => <NFTCard key={i} nft={nft}/>)
         }

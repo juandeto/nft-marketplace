@@ -9,52 +9,55 @@ import {ImCross} from 'react-icons/im'
 
 function MyApp({ Component, pageProps }) {
   const [displayMenu, setDisplayMenu] = useState(false)
-  
+
   return (
     <>
     <Head>
+      <GoogleFonts href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;700;900&display=swap" rel="stylesheet" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1" />
     </Head>
-    <GoogleFonts href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;700;900&display=swap" rel="stylesheet" />
-    <div className={styles.main__container}>
-            <div className={styles.nav_menuResponsive} onClick={() => setDisplayMenu(!displayMenu)}>
-              <FiMenu />
+    <div className={styles?.main__container}>
+            <div className={styles?.nav_menuResponsive} onClick={() => setDisplayMenu(!displayMenu)}>
+              {!displayMenu ?
+                <FiMenu />:
+                <ImCross />
+              }
             </div>
-          <nav className={`${styles.nav__linkContainer} ${displayMenu ? styles.opened:""}`}>
-            <div className={`${styles.nav__column1}`} >
+          <nav className={`${styles?.nav__linkContainer} ${displayMenu ? styles?.opened:""}`}>
+            <div className={`${styles?.nav__column1}`} >
               {/* <button>Connect</button> */}
             </div>
-            <div className={`${styles.nav__column2}`}>
+            <div className={`${styles?.nav__column2}`}>
               <Link href="/">
-                <a className={styles.nav__link} onClick={() => setDisplayMenu(!displayMenu)}>
+                <a className={styles?.nav__link} onClick={() => setDisplayMenu(!displayMenu)}>
                   Home
                 </a>
               </Link>
               <Link href="/catalogue">
-                <a className={styles.nav__link} onClick={() => setDisplayMenu(!displayMenu)}>
+                <a className={styles?.nav__link} onClick={() => setDisplayMenu(!displayMenu)}>
                   Gallery
                 </a>
               </Link>
               <Link href="/create-item">
-                <a className={styles.nav__link} onClick={() => setDisplayMenu(!displayMenu)}>
+                <a className={styles?.nav__link} onClick={() => setDisplayMenu(!displayMenu)}>
                   Sell NFT&apos;s
                 </a>
               </Link>
               <Link href="/my-assets">
-                <a className={styles.nav__link} onClick={() => setDisplayMenu(!displayMenu)}>
+                <a className={styles?.nav__link} onClick={() => setDisplayMenu(!displayMenu)}>
                   My NFT&apos;s
                 </a>
               </Link>
               <Link href="/creator-dashboard">
-                <a className={styles.nav__link} onClick={() => setDisplayMenu(!displayMenu)}>
+                <a className={styles?.nav__link} onClick={() => setDisplayMenu(!displayMenu)}>
                   Creator Dashboard
                 </a>
               </Link>
             </div >
         </nav>
       <Component {...pageProps} />
-      <footer className={styles.footer_container}>
-      <section className={styles.media_links}>
+      <footer className={styles?.footer_container}>
+      <section className={styles?.media_links}>
           <span><a
             href="mailto:juandeto10@gmail.com?"
             rel="noreferrer"

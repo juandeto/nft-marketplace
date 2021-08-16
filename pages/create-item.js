@@ -92,35 +92,35 @@ export default function CreateItem() {
     }
   
     return (
-      <div className={styles.createItem__container}>
-        <form className={styles.createItem__form} onSubmit={(event) => createMarket(event)}>
+      <div className={styles?.createItem__container}>
+        <form className={styles?.createItem__form} onSubmit={(event) => createMarket(event)}>
           <input 
             placeholder="Nombre del activo"
-            className={styles.createItem__input}
+            className={styles?.createItem__input}
             onChange={e => updateFormInput({ ...formInput, name: e.target.value })}
           />
           <textarea
             placeholder="Descripción del activo"
-            className={styles.createItem__textarea}
+            className={styles?.createItem__textarea}
             onChange={e => updateFormInput({ ...formInput, description: e.target.value })}
           />
           <input
             placeholder="Precio en Eth"
-            className={styles.createItem__input}
+            className={styles?.createItem__input}
             onChange={e => updateFormInput({ ...formInput, price: e.target.value })}
           />
           <input
             type="file"
             name="Archivo"
-            className={styles.createItem__input}
+            className={styles?.createItem__input}
             onChange={onChange}
           />
           {
             fileUrl && (
-              <Image alt="preview of the uploaded file" className={styles.createItem__container} width="350" src={fileUrl} />
+              <Image alt="preview of the uploaded file" className={styles?.createItem__container} width="350" src={fileUrl} />
             )
           }
-          <button type="submit" className={styles.createItem__container}>
+          <button type="submit" className={styles?.createItem__container}>
             Create NFT
           </button>
         </form>
