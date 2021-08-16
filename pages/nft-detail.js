@@ -5,7 +5,13 @@ import Image from 'next/image'
 
 export default function NFTDetail() {
     const router = useRouter()
-    const nft = JSON.parse(router.query.nft);
+    const obj_empty = {
+        image: '',
+        name: 'empty',
+        description: 'none',
+        price: '0'
+    }
+    const nft = JSON.parse(router?.query?.nft) || obj_empty;
 
     
     return(
