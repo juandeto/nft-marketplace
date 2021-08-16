@@ -41,3 +41,5 @@ artifacts
 
 #secret
 secret.json
+
+node_modules
