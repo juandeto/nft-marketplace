@@ -7,9 +7,11 @@
     "build": "next build",
     "export": "next export",
     "deploy": "npm run build && npm run export",
-    "start": "next start" 
+    "start": "next start"
   },
   "dependencies": {
+    "@babel/core": "^7.15.0",
+    "@babel/plugin-syntax-jsx": "^7.14.5",
     "@nomiclabs/hardhat-ethers": "^2.0.2",
     "@nomiclabs/hardhat-waffle": "^2.0.1",
     "@openzeppelin/contracts": "^4.2.0",

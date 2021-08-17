@@ -11,7 +11,7 @@ export default function NFTDetail() {
         description: 'none',
         price: '0'
     }
-    const nft = JSON.parse(router?.query?.nft || obj_empty);
+    const nft = JSON.parse(router?.query?.nft);
 
     
     return(

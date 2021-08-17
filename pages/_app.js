@@ -13,9 +13,10 @@ function MyApp({ Component, pageProps }) {
   return (
     <>
     <Head>
-      <GoogleFonts href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;700;900&display=swap" rel="stylesheet" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1" />
     </Head>
+    <GoogleFonts href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;700;900&display=swap" rel="stylesheet" />
+
     <div className={styles?.main__container}>
             <div className={styles?.nav_menuResponsive} onClick={() => setDisplayMenu(!displayMenu)}>
               {!displayMenu ?

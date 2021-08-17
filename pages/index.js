@@ -27,7 +27,7 @@ export default function Landing() {
           
           <div className={styles.landing_info}>
             <h1>NFT Market about de Tomaso brand</h1>
-            <Link passhref="/create-item">
+            <Link href="/create-item">
               <button>Start</button>
             </Link>
           </div>
