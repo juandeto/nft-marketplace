@@ -27,7 +27,7 @@ export default function Landing() {
           
           <div className={styles.landing_info}>
             <h1>NFT Market about de Tomaso brand</h1>
-            <Link href="/create-item">
+            <Link href="/create-item" passHref>
               <button>Start</button>
             </Link>
           </div>
@@ -42,7 +42,10 @@ export default function Landing() {
       <section className={styles.landing_collection}>
         <div className={styles.info}>
           <h2>Explore <span>NFT&#39;s</span> gallery</h2>
-          <button>Go</button>
+          <Link href="/catalogue" passHref>
+            <button>Go</button>
+          </Link>
+          
         </div>
         <div className={styles.landing_collectionImg}>
           <Image src={pantera2} alt="front picture -black'n white- Pantera car" />

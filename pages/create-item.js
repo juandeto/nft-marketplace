@@ -120,7 +120,7 @@ export default function CreateItem() {
               <Image alt="preview of the uploaded file" className={styles?.createItem__container} width="350" src={fileUrl} />
             )
           }
-          <button type="submit" className={styles?.createItem__container}>
+          <button type="submit" className={styles?.createItem__btn}>
             Create NFT
           </button>
         </form>

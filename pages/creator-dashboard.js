@@ -56,7 +56,7 @@ export default function CreatorDashboard() {
       <div>
         <div className={assets.gallery_container}>
             <header>
-              <h2 className={assets.gallery_container}>Items Created</h2>
+              <h2 >Items Created</h2>
             </header>
             <div className={assets.gallery}>
             {!nfts.length ? <h3 className={assets.empty_state}>No assets owned</h3>:
