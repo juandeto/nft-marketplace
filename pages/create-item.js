@@ -95,17 +95,17 @@ export default function CreateItem() {
       <div className={styles?.createItem__container}>
         <form className={styles?.createItem__form} onSubmit={(event) => createMarket(event)}>
           <input 
-            placeholder="Nombre del activo"
+            placeholder="Name"
             className={styles?.createItem__input}
             onChange={e => updateFormInput({ ...formInput, name: e.target.value })}
           />
           <textarea
-            placeholder="Descripción del activo"
+            placeholder="Description"
             className={styles?.createItem__textarea}
             onChange={e => updateFormInput({ ...formInput, description: e.target.value })}
           />
           <input
-            placeholder="Precio en Eth"
+            placeholder="Price en Eth"
             className={styles?.createItem__input}
             onChange={e => updateFormInput({ ...formInput, price: e.target.value })}
           />
