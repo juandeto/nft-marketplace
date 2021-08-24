@@ -66,6 +66,7 @@ $transition-box: all 0.1s ease 0s;
         letter-spacing: 0.04rem;
         text-transform: uppercase;
         transition: 0.4s all ease;
+        z-index: 100;
     }
     button:hover{
         background-color: $hover_blue;
